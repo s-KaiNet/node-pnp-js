@@ -28,7 +28,7 @@ pnp.setup({
     });
 ```  
 
-`credentials` - the same object ([`credentialOptions`](https://github.com/s-KaiNet/node-sp-auth#params)) provided for `node-sp-auth` module. That means you can use any authentication option from `node-sp-auth` you want. 
+`credentials` - the same object ([`credentialOptions`](https://github.com/s-KaiNet/node-sp-auth#params)) provided for [`node-sp-auth`](https://github.com/s-KaiNet/node-sp-auth) module. That means you can use any authentication option from [`node-sp-auth`](https://github.com/s-KaiNet/node-sp-auth) you want. 
 
 ### Use PnP-JS-Core library in code:
 
@@ -41,7 +41,7 @@ new pnp.Web(siteUrl)
 
 There are three different approaches you can use in order to provide your SharePoint site url. 
 
-#### 1. Use `Web` or `Site` constructor (like in sample above) with site url param: 
+#### 1. Use `Web` or `Site` constructor (like in a sample above) with `siteUrl` constructor param: 
 ```javascript
 pnp.setup({
         fetchClientFactory: () => {
@@ -63,7 +63,8 @@ pnp.setup({
         baseUrl: siteUrl
     });
 
-//now you can access your web using chaining syntax (pnp.sp.web will reference the web with url you provided as baseUrl):
+// now you can access your web using chaining syntax 
+// (pnp.sp.web will reference the web with url you provided as baseUrl):
 pnp.sp.web.get()
     .then(data => {
         console.log(`Your web title: ${data.Title}`);
@@ -77,7 +78,8 @@ pnp.setup({
         }
     });
 
-//now you can access your web using chaining syntax (pnp.sp.web will reference the web with url you provided as siteUrl param):
+// now you can access your web using chaining syntax 
+// (pnp.sp.web will reference the web with url you provided as siteUrl param):
 pnp.sp.web.get()
     .then(data => {
         console.log(`Your web title: ${data.Title}`);
@@ -85,7 +87,7 @@ pnp.sp.web.get()
 ```    
 
 ## Use cases:  
-1. Any Node.js project with SharePoint. It can be remote jobs, azure functions, daemons
+1. Any Node.js project with SharePoint. It can be remote jobs, azure functions, daemons, etc.
 2. Build pipeline extensibility. You can easily enhance your gulp pipeline with custom actions touching SharePoint. 
 3. Anything else you can do with Node.js and SharePoint :)
 

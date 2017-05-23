@@ -33,7 +33,7 @@ pnp.setup({
 ### Use PnP-JS-Core library in code:
 
 ```javascript
-new pnp.Web(siteUrl)
+new pnp.Web(siteUrl).get()
     .then(data => {
         console.log(`Your web title: ${data.Title}`);
     })
@@ -49,7 +49,7 @@ pnp.setup({
         }
     });
 
-new pnp.Web(siteUrl)
+new pnp.Web(siteUrl).get()
     .then(data => {
         console.log(`Your web title: ${data.Title}`);
     })

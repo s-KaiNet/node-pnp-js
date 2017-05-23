@@ -1,0 +1,6 @@
+node_modules
+reports
+test/integration/config.ts
+/lib
+**/private*.*
+!**/private*.sample.*

@@ -4,6 +4,8 @@
 
 [![npm version](https://badge.fury.io/js/node-pnp-js.svg)](https://badge.fury.io/js/node-pnp-js)
 
+### Need help on SharePoint with Node.JS? Join our gitter chat and ask question! [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/sharepoint-node/Lobby)
+
 `node-pnp-js` allows you to use [`pnp-js-core`](https://github.com/SharePoint/PnP-JS-Core) from Node.js environment.   
 `node-pnp-js` implements it's own version of `NodeFetchClient` (shipped with `sp-pnp-js`) which supports authentication with help of [`node-sp-auth`](https://github.com/s-KaiNet/node-sp-auth) module.  
 

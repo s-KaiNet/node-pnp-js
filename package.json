@@ -1,6 +1,6 @@
 {
   "name": "node-pnp-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "PnP-JS-Core (sp-pnp-js) with Node.js made easy",
   "main": "./lib/src/index.js",
   "typings": "./lib/src/index",
@@ -30,7 +30,7 @@
   "dependencies": {
     "node-fetch": "^1.7.0",
     "node-sp-auth": "^2.1.1",
-    "sp-pnp-js": "^2.0.5"
+    "sp-pnp-js": "^3.0.1"
   },
   "devDependencies": {
     "@types/chai": "^3.5.2",

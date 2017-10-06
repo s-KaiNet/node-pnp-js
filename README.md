@@ -24,10 +24,12 @@ import * as pnp from 'sp-pnp-js';
 import NodeFetchClient from 'node-pnp-js';
 
 pnp.setup({
+    sp: {
         fetchClientFactory: () => {
             return new NodeFetchClient(credentials);
         }
-    });
+    }
+});
 ```  
 
 `credentials` - the same object ([`credentialOptions`](https://github.com/s-KaiNet/node-sp-auth#params)) provided for [`node-sp-auth`](https://github.com/s-KaiNet/node-sp-auth) module. That means you can use any authentication option from [`node-sp-auth`](https://github.com/s-KaiNet/node-sp-auth) you want. 
@@ -46,10 +48,12 @@ There are three different approaches you can use in order to provide your ShareP
 #### 1. Use `Web` or `Site` constructor (like in a sample above) with `siteUrl` constructor param: 
 ```javascript
 pnp.setup({
+    sp: {
         fetchClientFactory: () => {
             return new NodeFetchClient(credentials);
         }
-    });
+    }
+});
 
 new pnp.Web(siteUrl).get()
     .then(data => {
@@ -59,11 +63,13 @@ new pnp.Web(siteUrl).get()
 #### 2. Use `baseUrl` configuration parameter (coming from `sp-pnp-js`):
 ```javascript
 pnp.setup({
+    sp: {
         fetchClientFactory: () => {
             return new NodeFetchClient(credentials);
         },
         baseUrl: siteUrl
-    });
+    }
+});
 
 // now you can access your web using chaining syntax 
 // (pnp.sp.web will reference the web with url you provided as baseUrl):
@@ -75,10 +81,12 @@ pnp.sp.web.get()
 #### 3. Use `siteUrl` constructor param for `NodeFetchClient`:
 ```javascript
 pnp.setup({
+    sp: {
         fetchClientFactory: () => {
             return new NodeFetchClient(credentials, siteUrl);
         }
-    });
+    }
+});
 
 // now you can access your web using chaining syntax 
 // (pnp.sp.web will reference the web with url you provided as siteUrl param):

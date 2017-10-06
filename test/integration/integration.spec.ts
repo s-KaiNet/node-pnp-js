@@ -51,8 +51,10 @@ tests.forEach(test => {
             this.timeout(30 * 1000);
 
             pnp.setup({
-                fetchClientFactory: () => {
-                    return new NodeFetchClient(test.creds);
+                sp: {
+                    fetchClientFactory: () => {
+                        return new NodeFetchClient(test.creds);
+                    }
                 }
             });
 
@@ -115,29 +117,8 @@ tests.forEach(test => {
             this.timeout(30 * 1000);
 
             pnp.setup({
-                baseUrl: test.url
-            });
-
-            request.get(`${test.url}/_api/web/`)
-                .then(data => {
-                    return Promise.all([(pnp.sp.web.get()), data.body.d.Title]);
-                })
-                .then(data => {
-                    expect(data[0].Title).to.equal(data[1]);
-                    pnp.setup({
-                        baseUrl: null
-                    });
-                    done();
-                })
-                .catch(done);
-        });
-
-        it('should correctly utilize NodeFetchClient with siteUrl param', function (done: MochaDone): void {
-            this.timeout(30 * 1000);
-
-            pnp.setup({
-                fetchClientFactory: () => {
-                    return new NodeFetchClient(test.creds, test.url);
+                sp: {
+                    baseUrl: test.url
                 }
             });
 
@@ -148,7 +129,36 @@ tests.forEach(test => {
                 .then(data => {
                     expect(data[0].Title).to.equal(data[1]);
                     pnp.setup({
-                        baseUrl: undefined
+                        sp: {
+                            baseUrl: test.url
+                        }
+                    });
+                    done();
+                })
+                .catch(done);
+        });
+
+        it('should correctly utilize NodeFetchClient with siteUrl param', function (done: MochaDone): void {
+            this.timeout(30 * 1000);
+
+            pnp.setup({
+                sp: {
+                    fetchClientFactory: () => {
+                        return new NodeFetchClient(test.creds, test.url);
+                    }
+                }
+            });
+
+            request.get(`${test.url}/_api/web/`)
+                .then(data => {
+                    return Promise.all([(pnp.sp.web.get()), data.body.d.Title]);
+                })
+                .then(data => {
+                    expect(data[0].Title).to.equal(data[1]);
+                    pnp.setup({
+                        sp: {
+                            baseUrl: undefined
+                        }
                     });
                     done();
                 })

@@ -52,9 +52,7 @@ tests.forEach(test => {
 
             pnp.setup({
                 sp: {
-                    fetchClientFactory: () => {
-                        return new NodeFetchClient(test.creds);
-                    }
+                    fetchClientFactory: () => new NodeFetchClient(test.creds)
                 }
             });
 

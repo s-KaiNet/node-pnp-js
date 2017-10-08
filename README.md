@@ -49,9 +49,7 @@ There are three different approaches you can use in order to provide your ShareP
 ```javascript
 pnp.setup({
     sp: {
-        fetchClientFactory: () => {
-            return new NodeFetchClient(credentials);
-        }
+        fetchClientFactory: () => new NodeFetchClient(test.creds)
     }
 });
 
@@ -64,9 +62,7 @@ new pnp.Web(siteUrl).get()
 ```javascript
 pnp.setup({
     sp: {
-        fetchClientFactory: () => {
-            return new NodeFetchClient(credentials);
-        },
+        fetchClientFactory: () => new NodeFetchClient(test.creds),
         baseUrl: siteUrl
     }
 });
@@ -82,9 +78,7 @@ pnp.sp.web.get()
 ```javascript
 pnp.setup({
     sp: {
-        fetchClientFactory: () => {
-            return new NodeFetchClient(credentials, siteUrl);
-        }
+        fetchClientFactory: () => new NodeFetchClient(test.creds)
     }
 });
 

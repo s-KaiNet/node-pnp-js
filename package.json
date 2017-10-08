@@ -1,6 +1,6 @@
 {
   "name": "node-pnp-js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "PnP-JS-Core (sp-pnp-js) with Node.js made easy",
   "main": "./lib/src/index.js",
   "typings": "./lib/src/index",

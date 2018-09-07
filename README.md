@@ -1,4 +1,6 @@
-# PnP-JS-Core (sp-pnp-js) with Node.js made easy
+## DEPRECATED USE [pnp-auth](https://github.com/SharePoint-NodeJS/pnp-auth) instead
+
+### PnP-JS-Core (sp-pnp-js) with Node.js made easy
 
 [![NPM](https://nodei.co/npm/node-pnp-js.png?mini=true)](https://nodei.co/npm/node-pnp-js/)
 
